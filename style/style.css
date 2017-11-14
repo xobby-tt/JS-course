@@ -1,0 +1,31 @@
+.main {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+input {outline:none;}
+
+.img-plus {
+    margin-left: 10px;
+    background: url(../img/icon.png);
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+.cell {
+    margin: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.24);
+    border-radius: 10px;
+    padding: 20px;  
+    width: 200px;
+    word-wrap: break-word;
+    background: white;
+    cursor: pointer;
+}
+.delete {
+    background: url(../img/icon.png);
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    
+}
