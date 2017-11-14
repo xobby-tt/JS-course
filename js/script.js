@@ -28,8 +28,14 @@ document.body.appendChild(list);
 
 document.body.onmouseover = function(event) {
     var target = event.target;    
+    var relative = event.relatedTarget;
+    
     if (!target.getAttribute("mobile"))
-    return;
+        return;
+    if(relative) {
+        if(event.relatedTarget.classList.contains("delete"))
+        return;
+    }
 
     target.style.background = "lightgrey";
     var deleteElem = document.createElement("div");
