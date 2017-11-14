@@ -23,9 +23,10 @@ input {outline:none;}
     cursor: pointer;
 }
 .delete {
-    background: url(../img/icon.png);
+    background: url(../img/cancel-512.png);
     width: 30px;
     height: 30px;
-    position: absolute;
+    float: right;
+
     
 }

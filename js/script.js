@@ -33,15 +33,15 @@ document.body.onmouseover = function(event) {
 
     target.style.background = "lightgrey";
     var deleteElem = document.createElement("div");
-    deleteElem.classList.add = "delete";
+    deleteElem.classList.add("delete");
 
     target.appendChild(deleteElem);
 
     deleteElem.onclick = function() {
-        target.parentNode.deleteElem(target);
+        target.parentNode.removeChild(target);
     }
 
-    target.onmouseout = function() {
+    target.onmouseleave = function() {
         target.style.background = "";
         target.removeChild(deleteElem);
     }
