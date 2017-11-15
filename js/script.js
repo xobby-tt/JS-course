@@ -15,11 +15,11 @@ document.body.appendChild(addLi);
 
 plus.onclick = function(event) {
         if (input.value) {
-        var newDiv = document.createElement("div");
-        newDiv.classList.add("cell");
-        newDiv.innerHTML = input.value;
-        newDiv.setAttribute("mobile", "true");
-        list.appendChild(newDiv);
+        var listElem = document.createElement("div");
+        listElem.classList.add("cell");
+        listElem.innerHTML = input.value;
+        listElem.setAttribute("draggable", "true");
+        list.appendChild(listElem);
         input.value = "";
     }
 }
@@ -30,7 +30,7 @@ document.body.onmouseover = function(event) {
     var target = event.target;    
     var relative = event.relatedTarget;
     
-    if (!target.getAttribute("mobile"))
+    if (!target.getAttribute("draggable"))
         return;
     if(relative) {
         if(event.relatedTarget.classList.contains("delete"))
@@ -40,7 +40,6 @@ document.body.onmouseover = function(event) {
     target.style.background = "lightgrey";
     var deleteElem = document.createElement("div");
     deleteElem.classList.add("delete");
-
     target.appendChild(deleteElem);
 
     deleteElem.onclick = function() {
@@ -57,7 +56,7 @@ document.body.onmouseover = function(event) {
 document.body.onmousedown = function(event) {
     var target = event.target;
 
-    if (!target.getAttribute("mobile"))
+    if (!target.getAttribute("draggable"))
         return;
 
     var coords = getCoords(target);
